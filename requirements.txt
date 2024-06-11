@@ -1,0 +1,19 @@
+Flask-JWT-Extended
+Flask-Smorest
+Flask-SQLAlchemy
+Flask-Migrate
+passlib
+marshmallow
+python-dotenv
+gunicorn
+Flask-bcrypt
+Flask-login
+pillow
+Flask-mail
+datetime
+Flask-WTF
+email_validator
+
+# To run and install the requirements of these packages.
+# You need to firstly run your virtual environment.
+# Then write down "pip install -r requirements.txt" in the terminal.

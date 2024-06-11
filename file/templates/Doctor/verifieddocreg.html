@@ -1,0 +1,111 @@
+{% extends 'loginlayout.html' %}
+{% block content %}
+<section class="body-font text-gray-600">
+  <div class="container mx-auto flex flex-wrap items-center px-5 py-10">
+    <div class="mt-10 mx-auto flex w-full flex-col rounded-lg bg-gray-100 p-8 md:ml-auto md:mt-0 md:w-1/2 lg:w-1/2">
+      <div class="border-b border-gray-900/10 pb-12">
+        <h2 class="title-font mb-6 text-lg font-medium text-gray-900">Doctor's Registration</h2>
+        <form method="POST" action="">
+          {{ form.hidden_tag() }}
+          <div class="form-group mb-4">
+            {{ form.username.label(class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm leading-7 text-gray-600") }}
+            {{ form.username(class="w-full rounded border border-gray-300 bg-white px-3 py-1 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out", readonly="readonly") }}
+            </div>
+            <div class="form-group mb-4">
+              {{ form.email.label(class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm leading-7 text-gray-600") }}
+              {{ form.email(class="w-full rounded border border-gray-300 bg-white px-3 py-1 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out", readonly="readonly") }}
+            </div>
+            <div class="form-group mb-4">
+              {{ form.mobileno.label(class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm leading-7 text-gray-600") }}
+              <!-- Error Message Starts-->
+              {% if form.mobileno.errors %}
+                  <input type="text" name="mobileno" id="mobileno" class="w-full rounded border border-red-300 bg-white px-3 py-1 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-red-200">
+                  <div class="text-red-500 text-sm mt-1">
+                    {% for error in form.mobileno.errors %}
+                      <span>{{ error }}</span>
+                    {% endfor %}
+                  </div>
+              {% else %}
+                  <input type="text" name="mobileno" id="mobileno" class="w-full rounded border border-gray-300 bg-white px-3 py-1 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200">
+              {% endif %}
+              <!-- Error Message Ends-->
+            </div>
+            <div class="form-group mb-4">
+              {{ form.qualification.label(class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm leading-7 text-gray-600") }}
+              <!-- Error Message Starts-->
+              {% if form.qualification.errors %}
+                  <input type="text" name="qualification" id="qualification" class="w-full rounded border border-red-300 bg-white px-3 py-1 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-red-200">
+                  <div class="text-red-500 text-sm mt-1">
+                    {% for error in form.qualification.errors %}
+                      <span>{{ error }}</span>
+                    {% endfor %}
+                  </div>
+              {% else %}
+                  <input type="text" name="qualification" id="qualification" class="w-full rounded border border-gray-300 bg-white px-3 py-1 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200">
+              {% endif %}
+              <!-- Error Message Ends-->
+            </div>
+            <div class="form-group mb-4">
+              {{ form.experience.label(class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm leading-7 text-gray-600") }}
+              <!-- Error Message Starts-->
+              {% if form.experience.errors %}
+                  <input type="text" name="experience" id="experience" class="w-full rounded border border-red-300 bg-white px-3 py-1 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-red-200">
+                  <div class="text-red-500 text-sm mt-1">
+                    {% for error in form.experience.errors %}
+                      <span>{{ error }}</span>
+                    {% endfor %}
+                  </div>
+              {% else %}
+                  <input type="text" name="experience" id="experience" class="w-full rounded border border-gray-300 bg-white px-3 py-1 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200">
+              {% endif %}
+              <!-- Error Message Ends-->
+            </div>
+            <div class="form-group mb-4">
+              {{ form.department.label(class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm leading-7 text-gray-600") }}
+              <select id="department" name="department" class="w-full bg-white-200 border border-gray-300 p-2 rounded-md">
+                <option value="cardiology">Cardiology</option>
+                <option value="dermatology">Dermatology</option>
+                <option value="endocrinology">Endocrinology</option>
+                <option value="gastroenterology">Gastroenterology</option>
+                <option value="neurology">Neurology</option>
+                <option value="oncology">Oncology</option>
+                <option value="orthopedics">Orthopedics</option>
+                <option value="pediatrics">Pediatrics</option>
+                <option value="psychiatry">Psychiatry</option>
+                <option value="urology">Urology</option>
+            </select>
+            <div class="form-group mb-4">
+              {{ form.clinicplace.label(class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm leading-7 text-gray-600") }}
+              <select id="clinicplace" name="clinicplace" class="w-full bg-white-200 border border-gray-300 p-2 rounded-md">
+                <option value="mahaveernagar">Mahaveer Nagar</option>
+                <option value="keshavpura">Keshavpura</option>
+                <option value="talwandi">Talwandi</option>
+                <option value="vigyannnagar">Vigyan Nagar</option>
+                <option value="gumanpura">Gumanpura</option>
+                <option value="nayapura">Nayapura</option>
+                <option value="anantpura">Anantpura</option>
+                <option value="sabzimandi">Sabzi Mandi</option>
+                <option value="oldchurch">Old Church</option>
+                <option value="rampura">Rampura</option>
+            </select>
+            {{ form.address.label(class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm leading-7 text-gray-600") }}
+              <!-- Error Message Starts-->
+              {% if form.address.errors %}
+                  <input type="text" name="address" id="address" class="w-full rounded border border-red-300 bg-white px-3 py-1 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-red-200">
+                  <div class="text-red-500 text-sm mt-1">
+                    {% for error in form.address.errors %}
+                      <span>{{ error }}</span>
+                    {% endfor %}
+                  </div>
+              {% else %}
+                  <input type="text" name="address" id="address" class="w-full rounded border border-gray-300 bg-white px-3 py-1 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200">
+              {% endif %}
+              <!-- Error Message Ends-->
+            </div>
+            {{ form.submit( class="rounded border-0 bg-indigo-500 w-full px-8 py-2 mt-4 text-lg text-white hover:bg-indigo-600 focus:outline-none") }}
+        </form>
+    </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

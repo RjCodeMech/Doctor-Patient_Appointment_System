@@ -1,0 +1,50 @@
+{% extends 'loginlayout.html' %}
+{% block content %}
+<section class="text-gray-600 body-font">
+  <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
+      <figcaption class="flex items-center justify-center ">
+          <img class="rounded-full w-16 h-16" src="{{ image_file }}" alt="profile picture">
+          <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
+              <div>{{ current_user.username }}</div>
+              <div class="text-sm text-gray-500 dark:text-gray-400 ">{{ current_user.email }}</div>
+          </div>
+      </figcaption>
+      <a href="{{url_for("doctor.docupdate")}}"> <button class="mt-6 rounded border-0 bg-gray-700 w-full px-8 py-2 text-lg text-white hover:bg-gray-500 focus:outline-none">Update info</button>
+      </a>
+  </figure>
+    <div class="container px-5 py-24 mx-auto">
+      <div class="text-center mb-20">
+        <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Welcome Sir! We are glad to come you here.</h1>
+        <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">You have some appointments to confirm today. Kindly confirm and submit as per your availability.</p>
+      </div>
+      <table class="w-full border-collapse border border-gray-300">
+        <thead>
+            <tr>
+                <th class="border border-gray-300 px-4 py-2">Date</th>
+                <th class="border border-gray-300 px-4 py-2">Time</th>
+                <th class="border border-gray-300 px-4 py-2">Patient</th>
+                <th class="border border-gray-300 px-4 py-2">Status</th>
+                <th class="border border-gray-300 px-4 py-2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for booking in bookings %}
+            <tr>
+                <td class="border border-gray-300 px-4 py-2">{{booking.date}}</td>
+                <td class="border border-gray-300 px-4 py-2">{{booking.time}}</td>
+                <td class="border border-gray-300 px-4 py-2">{{booking.username}}</td>
+                <td class="border border-gray-300 px-4 py-2">{{booking.status}}</td>
+                <td class="border border-gray-300 px-4 py-2">
+                    <div class="flex gap-2">
+                        <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Confirm</button>
+                        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+</body>
+</html>
+{% endblock content %}

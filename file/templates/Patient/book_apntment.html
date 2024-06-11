@@ -1,0 +1,49 @@
+{% extends 'loginlayout.html' %}
+{% block content %}
+<body class="bg-gray-100">
+  <div class="container mx-auto mt-8">
+      <h1 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Book Appointment</h1>
+      <form class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md" method="POST" action="">
+          {{ form.hidden_tag() }}
+          <div class="mb-4">
+            {{form.department.label(class="block text-gray-700 font-bold mb-2")}}
+            {{form.department(class="w-full bg-gray-200 border border-gray-300 p-2 rounded-md")}}
+          </div>
+          <div class="mb-4">
+            {{form.clinicplace.label(class="block text-gray-700 font-bold mb-2")}}
+            {{form.clinicplace(class="w-full bg-gray-200 border border-gray-300 p-2 rounded-md")}}
+          </div>
+            <div class="mb-4">
+                {{form.doctor.label(class="block text-gray-700 font-bold mb-2")}}
+                <select id="doctor" name="doctor" class="w-full bg-gray-200 border border-gray-300 p-2 rounded-md">
+                    <option value="1">Dr. John Doe</option>
+                    <option value="2">Dr. Jane Smith</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                {{form.date.label(class="block text-gray-700 font-bold mb-2")}}
+                <input type="date" id="date" name="date" class="w-full bg-gray-200 border border-gray-300 p-2 rounded-md">
+            </div>
+            <div class="mb-4">
+              {{form.time.label(class="block text-gray-700 font-bold mb-2")}}
+              <select id="time" name="time" class="w-full bg-gray-200 border border-gray-300 p-2 rounded-md">
+                  <option value="09:00">09:00 AM</option>
+                  <option value="10:00">10:00 AM</option>
+                  <option value="11:00">11:00 AM</option>
+                  <option value="12:00">12:00 PM</option>
+                  <option value="13:00">01:00 PM</option>
+                  <option value="14:00">02:00 PM</option>
+                  <option value="15:00">03:00 PM</option>
+                  <option value="16:00">04:00 PM</option>
+                  <option value="17:00">05:00 PM</option>
+              </select>
+          </div>
+            <div class="mb-4">
+                {{form.content.label(class="block text-gray-700 font-bold mb-2")}}
+                {{form.content(class="w-full bg-gray-200 border border-gray-300 p-2 rounded-md")}}
+            </div>
+            {{form.submit(class="bg-blue-500 hover:bg-blue-700 item-center text-white font-bold py-2 px-4 rounded")}}
+      </form>
+  </div>
+</body>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends 'loginlayout.html' %}
+{% block content %}
+
+<body class="bg-gray-100">
+  <div class="container mx-auto mt-8">
+      <h1 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Book Appointment</h1>
+      <form class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md" method="POST" action="">
+          {{ form.hidden_tag() }}
+          <div class="mb-4">
+            {{form.department.label(class="block text-gray-700 font-bold mb-2")}}
+            {{form.department(class="w-full bg-gray-200 border border-gray-300 p-2 rounded-md")}}
+          </div>
+          <div class="mb-4">
+            {{form.clinicplace.label(class="block text-gray-700 font-bold mb-2")}}
+            {{form.clinicplace(class="w-full bg-gray-200 border border-gray-300 p-2 rounded-md")}}
+          </div>
+            {{form.submit(class="bg-blue-500 hover:bg-blue-700 item-center text-white font-bold py-2 px-4 rounded")}}
+      </form>
+      <a href="{{url_for("patient.patin")}}"> <button class="bg-blue-500 hover:bg-blue-700 item-center text-white font-bold py-2 px-4 rounded">Cancel</button>
+  </div>
+</body>
+
+{% endblock content %}

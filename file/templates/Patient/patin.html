@@ -1,0 +1,21 @@
+{% extends 'loginlayout.html' %}
+{% block content %}
+<section class="text-gray-600 body-font">
+  <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
+    <figcaption class="flex items-center justify-center ">
+        <img class="rounded-full w-16 h-16" src="{{ image_file }}" alt="profile picture">
+        <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
+            <div>{{ current_user.username }}</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400 ">{{ current_user.email }}</div>
+        </div>
+    </figcaption>
+    <a href="{{url_for("patient.patupdate")}}"> <button class="mt-6 rounded border-0 bg-gray-700 w-full px-8 py-2 text-lg text-white hover:bg-gray-500 focus:outline-none">Update info</button>
+    </a>
+  </figure>
+      <a href="{{url_for("patient.selectdepartment")}}"><button class="flex mx-auto mt-16 text-white bg-gray-800 border-0 py-2 px-8 focus:outline-none hover:bg-gray-700 rounded text-lg">Book Appointment</button>
+      </a>
+    </div>
+</section>
+</body>
+</html>
+{% endblock content %}
