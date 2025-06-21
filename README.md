@@ -49,6 +49,10 @@ A Flask web app for managing services and appointments.
 
   ![Appointment Booking](assets/appointment_booking.png)
 
+- **Patient Update Info:** [http://127.0.0.1:70/patient/account/update](http://127.0.0.1:70/patient/account/update)
+
+  ![Patient Update Info](assets/patient_update_info.png)
+  
 - **Doctor not Available Error:** [http://127.0.0.1:70/account/booking/selectdepartment](http://127.0.0.1:70/account/booking/selectdepartment)
 
   ![Doctor not available](assets/doctor_not_available.png)
