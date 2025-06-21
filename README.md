@@ -1,6 +1,7 @@
 # LifeSure Services
 
-A Flask web app for managing services and appointments.
+A Flask web app for managing healthcare services and appointments with email-based authentication, role-based access, and secure session management for patients and doctors.
+
 
 ## 🛠️ Tech Stack
 - Flask
