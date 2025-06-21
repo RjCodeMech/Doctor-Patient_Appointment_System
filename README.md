@@ -1,4 +1,13 @@
-# Doctor - Patient Appointment System
+# LifeSure Services
+
+A Flask web app for managing services and appointments.
+
+## 🛠️ Tech Stack
+- Flask
+- Bootstrap
+- SQLite
+
+## 🔍 Preview
 
 1. Patient Account
 
