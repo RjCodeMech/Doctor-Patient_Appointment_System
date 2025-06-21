@@ -9,11 +9,12 @@ A Flask web app for managing services and appointments.
 
 ## 🔍 Preview
 
-1. Patient Account
+### 1. Patient Account
 
-Registration: http://http://127.0.0.1:70/patient/patientregistration
-Login: http://http://127.0.0.1:70/patient/login
-Logout: http://127.0.0.1:70/patient/logout
+- **Registration:** [http://127.0.0.1:70/patient/patientregistration](http://127.0.0.1:70/patient/patientregistration)  
+- **Login:** [http://127.0.0.1:70/patient/login](http://127.0.0.1:70/patient/login)  
+- **Logout:** [http://127.0.0.1:70/patient/logout](http://127.0.0.1:70/patient/logout)
+
 
 2. Doctor Account
 
